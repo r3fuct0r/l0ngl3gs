@@ -1,0 +1,16 @@
+from bs4 import BeautifulSoup
+import requests
+
+def retrieve(url):
+	soup=BeautifulSoup((requests.get('http://'+url)).text)
+	print soup.prettify
+
+print """
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		l0ngl3gs v0.1 - Web Crawler
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
+targetUri=raw_input('Feed me a link: ')
+retrieve(targetUri)
+	
